@@ -9,6 +9,8 @@ class ServerType {
 	String name
 	String description
 	
+	static hasMany=[servers:Server]
+	
     static constraints = {
     }
 	

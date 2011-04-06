@@ -10,9 +10,7 @@ class Service {
 	String description
 	
 	static belongsTo = Server
-	
-	static hasOne = [priority:Priority]
-	
+		
     static constraints = {
     }
 	

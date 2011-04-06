@@ -9,7 +9,9 @@ class Platform {
 	String name
 	String description
 	
-    static constraints = {
+	static hasMany=[servers:Server]
+    
+	static constraints = {
     }
 	
 	String toString(){
