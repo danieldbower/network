@@ -87,7 +87,16 @@
                                     <label for="description"><g:message code="server.description.label" default="Description" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'description', 'errors')}">
-                                    <g:textArea name="description" cols="40" rows="5" value="${serverInstance?.description}" />
+                                    <g:textArea name="description" cols="80" rows="5" value="${serverInstance?.description}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="buildScripts[0].text"><g:message code="server.buildScripts.text.label" default="Build Script" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'buildScripts.text', 'errors')}">
+                                    <g:textArea name="buildScripts[0].text" cols="80" rows="5" value="${serverInstance?.buildScripts?.get(0)?.text}" />
                                 </td>
                             </tr>
                         
