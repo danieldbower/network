@@ -11,6 +11,8 @@ class Priority implements Comparable{
 	static hasMany=[servers:Server]
 	
     static constraints = {
+		name(blank:false)
+		description(maxSize:256)
     }
 	
 	int compareTo(Object o){

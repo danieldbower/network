@@ -12,6 +12,8 @@ class Platform {
 	static hasMany=[servers:Server]
     
 	static constraints = {
+		name(blank:false)
+		description(maxSize:256)
     }
 	
 	String toString(){

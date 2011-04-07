@@ -12,6 +12,8 @@ class Service {
 	static belongsTo = Server
 		
     static constraints = {
+		name(blank:false)
+		description(maxSize:256)
     }
 	
 	String toString(){

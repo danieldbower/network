@@ -18,6 +18,9 @@ class Server {
 	static hasMany=[connections: Connection, services:Service, buildScripts:BuildScript]
 	
     static constraints = {
+		host(blank:false)
+		description(maxSize:256)
+		assetTag(maxSize:256)
     }
 	
 	String toString(){

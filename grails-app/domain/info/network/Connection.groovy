@@ -11,6 +11,7 @@ class Connection {
 	static belongsTo = Server
 	
     static constraints = {
+		address(blank:false, maxSize:48)
     }
 	
 	String toString(){

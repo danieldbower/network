@@ -12,6 +12,7 @@ class BuildScript implements Comparable{
 	static belongsTo = Server
 	
     static constraints = {
+		text(blank:false, maxSize:32000)
     }
 	
 	int compareTo(Object o){
