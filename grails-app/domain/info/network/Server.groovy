@@ -14,8 +14,9 @@ class Server {
 	// true for physical
 	Boolean physicalOrVirtual = false
 	
-	static hasOne = [platform: Platform, serverType: ServerType, priority:Priority]
-	static hasMany=[connections: Connection, services:Service, buildScripts:BuildScript]
+	static belongsTo = ServerType
+	static hasOne = [platform: Platform, priority:Priority]
+	static hasMany=[connections: Connection, services:Service, buildScripts:BuildScript, serverType: ServerType]
 	
     static constraints = {
 		host(blank:false)

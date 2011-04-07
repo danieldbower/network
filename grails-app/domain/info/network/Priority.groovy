@@ -25,4 +25,14 @@ class Priority implements Comparable{
 	String toString(){
 		name
 	}
+	
+	/**
+	* This class is a reference table for the most part, This method will load the default choices to the database.
+	*/
+	static void loadDefaultsInstancesToDB(){
+		new Priority(level:100, name:"Critical", description:"Infrastructure Systems that are required to be up before any other services are possible to be provided").save()
+		new Priority(level:80, name:"High", description:"Systems with a strict service level agreement").save()
+		new Priority(level:40, name:"Medium", description:"Business Systems with a medium service level agreement").save()
+		new Priority(level:0, name:"Low", description:"Systems with a low service level agreement ").save()
+	}
 }
