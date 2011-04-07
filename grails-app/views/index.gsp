@@ -55,44 +55,30 @@
             <div class="homePagePanel">
                 <div class="panelTop"></div>
                 <div class="panelBody">
-                    <h1>Application Status</h1>
+                    <h1>Categories</h1>
                     <ul>
-                        <li>App version: <g:meta name="app.version"></g:meta></li>
-                        <li>Grails version: <g:meta name="app.grails.version"></g:meta></li>
-                        <li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
-                        <li>JVM version: ${System.getProperty('java.version')}</li>
-                        <li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-                        <li>Domains: ${grailsApplication.domainClasses.size()}</li>
-                        <li>Services: ${grailsApplication.serviceClasses.size()}</li>
-                        <li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-                    </ul>
-                    <h1>Installed Plugins</h1>
-                    <ul>
-                        <g:set var="pluginManager"
-                               value="${applicationContext.getBean('pluginManager')}"></g:set>
-
-                        <g:each var="plugin" in="${pluginManager.allPlugins}">
-                            <li>${plugin.name} - ${plugin.version}</li>
-                        </g:each>
-
+                        <li class="controller"><g:link controller="platform">Platforms</g:link></li>
+                        <li class="controller"><g:link controller="priority">Priorities</g:link></li>
+                        <li class="controller"><g:link controller="serverType">Server Types</g:link></li>
                     </ul>
                 </div>
                 <div class="panelBtm"></div>
             </div>
         </div>
         <div id="pageBody">
-            <h1>Welcome to Grails</h1>
-            <p>Congratulations, you have successfully started your first Grails application! At the moment
-            this is the default page, feel free to modify it to either redirect to a controller or display whatever
-            content you may choose. Below is a list of controllers that are currently deployed in this application,
-            click on each to execute its default action:</p>
+            <h1>Welcome to Network</h1>
+            <p></p>
 
             <div id="controllerList" class="dialog">
-                <h2>Available Controllers:</h2>
+                <h2>Server</h2>
                 <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-                    </g:each>
+                    <li><g:link controller="server">Servers</g:link></li>
+                </ul>
+                <h2>These need to be integrated with the Server functionality</h2>
+                <ul>
+                    <li><g:link controller="buildScript">Build Scripts</g:link></li>
+                    <li><g:link controller="connection">Connections</g:link></li>
+                    <li><g:link controller="service">Services</g:link></li>
                 </ul>
             </div>
         </div>
