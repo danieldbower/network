@@ -84,6 +84,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                    <label for="serverTypes"><g:message code="server.serverTypes.label" default="Server Types" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'platform', 'errors')}">
+                                    <g:select name="serverTypes"
+								          from="${info.network.ServerType.list()}"
+								          value="${serverInstance?.serverTypes*.id}"
+								          optionKey="id" 
+								          multiple="true" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                     <label for="description"><g:message code="server.description.label" default="Description" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'description', 'errors')}">

@@ -98,11 +98,11 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="server.serverType.label" default="Server Type" /></td>
+                            <td valign="top" class="name"><g:message code="server.serverTypes.label" default="Server Type" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">
                                 <ul>
-                                <g:each in="${serverInstance.serverType}" var="s">
+                                <g:each in="${serverInstance.serverTypes}" var="s">
                                     <li><g:link controller="serverType" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
                                 </g:each>
                                 </ul>

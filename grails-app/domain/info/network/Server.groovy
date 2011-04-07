@@ -16,7 +16,7 @@ class Server {
 	
 	static belongsTo = ServerType
 	static hasOne = [platform: Platform, priority:Priority]
-	static hasMany=[connections: Connection, services:Service, buildScripts:BuildScript, serverType: ServerType]
+	static hasMany=[connections: Connection, services:Service, buildScripts:BuildScript, serverTypes: ServerType]
 	
     static constraints = {
 		host(blank:false)
