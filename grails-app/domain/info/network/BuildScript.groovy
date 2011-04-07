@@ -6,7 +6,7 @@ package info.network
  *
  */
 class BuildScript implements Comparable{
-	Integer version = 0
+	Integer scriptVersion = 0
 	String text
 	
 	static belongsTo = Server
@@ -19,10 +19,10 @@ class BuildScript implements Comparable{
 		if(Object instanceof BuildScript){
 			throw new ClassCastException("Cannot compare object of class ${o.getClass().toString()} to a BuildScript")
 		}
-		return (version.compareTo(o.version))
+		return (scriptVersion.compareTo(o.scriptVersion))
 	}
 	
 	String toString(){
-		version.toString()
+		scriptVersion.toString()
 	}
 }

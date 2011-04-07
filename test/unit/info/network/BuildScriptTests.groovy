@@ -9,8 +9,8 @@ class BuildScriptTests extends GrailsUnitTestCase {
 	protected void setUp() {
         super.setUp()
 		
-		scriptA = new BuildScript(version:0, text:"A test build script, do stuff")
-		scriptB = new BuildScript(version:2, text:"A test build script, do stuff")
+		scriptA = new BuildScript(scriptVersion:0, text:"A test build script, do stuff")
+		scriptB = new BuildScript(scriptVersion:2, text:"A test build script, do stuff")
     }
 
     protected void tearDown() {
