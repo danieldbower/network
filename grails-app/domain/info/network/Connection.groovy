@@ -7,6 +7,7 @@ package info.network
  */
 class Connection {
 	String address
+	Boolean administrativeConnection = false
 	
 	static belongsTo = Server
 	

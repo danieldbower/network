@@ -55,9 +55,11 @@
                             
                             <td valign="top" style="text-align: left;" class="value">
                                 <ul>
-                                <g:each in="${serverInstance.buildScripts}" var="b">
-                                    <li><g:link controller="buildScript" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link></li>
-                                </g:each>
+                                <g:if test="${0<serverInstance.buildScripts.size()}">
+                                    <g:each in="${serverInstance.buildScripts}" var="b">
+                                        <li><g:link controller="buildScript" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link> </li>
+                                    </g:each>
+                                </g:if>
                                 </ul>
                             </td>
                             
@@ -69,7 +71,7 @@
                             <td valign="top" style="text-align: left;" class="value">
                                 <ul>
                                 <g:each in="${serverInstance.connections}" var="c">
-                                    <li><g:link controller="connection" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+                                    <li><g:link controller="connection" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link> - <g:if test="${c.administrativeConnection }">Administrative IP</g:if></li>
                                 </g:each>
                                 </ul>
                             </td>

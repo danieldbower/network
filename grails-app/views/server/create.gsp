@@ -78,7 +78,8 @@
                                     <label for="connections[0].address"><g:message code="server.connections.primaryaddress.label" default="Administrative Ip Address" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'connections.address', 'errors')}">
-                                    <g:textField name="connections[0].address" size="40" value="${serverInstance?.connections?.get(0)?.address}" />
+                                    <g:textField name="connections[0].address" size="40" value="${serverInstance?.connections?.getAt(0)?.address}" />
+                                    <g:hiddenField name="connections[0].administrativeConnection" value="true"></g:hiddenField>
                                 </td>
                             </tr>
                         
@@ -109,7 +110,7 @@
                                     <label for="buildScripts[0].text"><g:message code="server.buildScripts.text.label" default="Build Script" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'buildScripts.text', 'errors')}">
-                                    <g:textArea name="buildScripts[0].text" cols="80" rows="5" value="${serverInstance?.buildScripts?.get(0)?.text}" />
+                                    <g:textArea name="buildScripts[0].text" cols="80" rows="5" value="${serverInstance?.buildScripts?.getAt(0)?.text}" />
                                 </td>
                             </tr>
                         

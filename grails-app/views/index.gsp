@@ -76,7 +76,6 @@
                 </ul>
                 <h2>These need to be integrated with the Server functionality</h2>
                 <ul>
-                    <li><g:link controller="buildScript">Build Scripts</g:link></li>
                     <li><g:link controller="service">Services</g:link></li>
                 </ul>
             </div>
