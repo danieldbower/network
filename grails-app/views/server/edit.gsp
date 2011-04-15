@@ -36,43 +36,7 @@
                                   <label for="host"><g:message code="server.host.label" default="Host" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'host', 'errors')}">
-                                    <g:textField name="host" value="${serverInstance?.host}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="description"><g:message code="server.description.label" default="Description" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'description', 'errors')}">
-                                    <g:textArea name="description" cols="40" rows="5" value="${serverInstance?.description}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="assetTag"><g:message code="server.assetTag.label" default="Asset Tag" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'assetTag', 'errors')}">
-                                    <g:textArea name="assetTag" cols="40" rows="5" value="${serverInstance?.assetTag}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="buildScripts"><g:message code="server.buildScripts.label" default="Build Scripts" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'buildScripts', 'errors')}">
-                                    <g:select name="buildScripts" from="${info.network.BuildScript.list()}" multiple="yes" optionKey="id" size="5" value="${serverInstance?.buildScripts*.id}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="connections"><g:message code="server.connections.label" default="Connections" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'connections', 'errors')}">
-                                    <g:select name="connections" from="${info.network.Connection.list()}" multiple="yes" optionKey="id" size="5" value="${serverInstance?.connections*.id}" />
+                                    <g:textField name="host" size="40" value="${serverInstance?.host}" />
                                 </td>
                             </tr>
                         
@@ -82,6 +46,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'physicalOrVirtual', 'errors')}">
                                     <g:checkBox name="physicalOrVirtual" value="${serverInstance?.physicalOrVirtual}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="assetTag"><g:message code="server.assetTag.label" default="Asset Tag" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'assetTag', 'errors')}">
+                                    <g:textField name="assetTag" size="40" value="${serverInstance?.assetTag}" />
                                 </td>
                             </tr>
                         
@@ -105,10 +78,28 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="connections"><g:message code="server.connections.label" default="Connections" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'connections', 'errors')}">
+                                    <g:select name="connections" from="${info.network.Connection.list()}" multiple="yes" optionKey="id" size="5" value="${serverInstance?.connections*.id}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="serverType"><g:message code="server.serverType.label" default="Server Type" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'serverType', 'errors')}">
-                                    
+                                    <g:select name="serverType" from="${info.network.ServerType.list()}" multiple="yes" optionKey="id" size="5" value="${serverInstance?.serverTypes*.id}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="description"><g:message code="server.description.label" default="Description" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'description', 'errors')}">
+                                    <g:textArea name="description" cols="40" rows="5" value="${serverInstance?.description}" />
                                 </td>
                             </tr>
                         
@@ -123,6 +114,9 @@
                         
                         </tbody>
                     </table>
+                </div>
+                <div class="hidden">
+                     <g:select name="buildScripts" from="${info.network.BuildScript.list()}" multiple="yes" optionKey="id" size="5" value="${serverInstance?.buildScripts*.id}" />
                 </div>
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
