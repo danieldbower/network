@@ -10,6 +10,7 @@ class Connection {
 	Boolean administrativeConnection = false
 	
 	static belongsTo = Server
+	static hasOne = [server:Server]
 	
     static constraints = {
 		address(blank:false, maxSize:48)

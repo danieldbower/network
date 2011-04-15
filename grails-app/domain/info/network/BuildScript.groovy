@@ -10,6 +10,7 @@ class BuildScript implements Comparable{
 	String text
 	
 	static belongsTo = Server
+	static hasOne = [server:Server]
 	
     static constraints = {
 		text(blank:false, maxSize:32000)
