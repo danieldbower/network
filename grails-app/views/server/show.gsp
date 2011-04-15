@@ -23,13 +23,6 @@
                     <tbody>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="server.id.label" default="Id" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: serverInstance, field: "id")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="server.host.label" default="Host" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: serverInstance, field: "host")}</td>
@@ -37,9 +30,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="server.description.label" default="Description" /></td>
+                            <td valign="top" class="name"><g:message code="server.physicalOrVirtual.label" default="Physical Or Virtual" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: serverInstance, field: "description")}</td>
+                            <td valign="top" class="value"><g:formatBoolean boolean="${serverInstance?.physicalOrVirtual}"  true="Physical" false="Virtual" /></td>
                             
                         </tr>
                     
@@ -47,41 +40,6 @@
                             <td valign="top" class="name"><g:message code="server.assetTag.label" default="Asset Tag" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: serverInstance, field: "assetTag")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="server.buildScripts.label" default="Build Scripts" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:if test="${0<serverInstance.buildScripts.size()}">
-                                    <g:each in="${serverInstance.buildScripts}" var="b">
-                                        <li><g:link controller="buildScript" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link> </li>
-                                    </g:each>
-                                </g:if>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="server.connections.label" default="Connections" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${serverInstance.connections}" var="c">
-                                    <li><g:link controller="connection" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link> - <g:if test="${c.administrativeConnection }">Administrative IP</g:if></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="server.physicalOrVirtual.label" default="Physical Or Virtual" /></td>
-                            
-                            <td valign="top" class="value"><g:formatBoolean boolean="${serverInstance?.physicalOrVirtual}" /></td>
                             
                         </tr>
                     
@@ -100,6 +58,19 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="server.connections.label" default="Connections" /></td>
+                            
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each in="${serverInstance.connections}" var="c">
+                                    <li><g:link controller="connection" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link> - <g:if test="${c.administrativeConnection }">Administrative IP</g:if></li>
+                                </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="server.serverTypes.label" default="Server Type" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">
@@ -107,6 +78,28 @@
                                 <g:each in="${serverInstance.serverTypes}" var="s">
                                     <li><g:link controller="serverType" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
                                 </g:each>
+                                </ul>
+                            </td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="server.description.label" default="Description" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: serverInstance, field: "description")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="server.buildScripts.label" default="Build Scripts" /></td>
+                            
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:if test="${0<serverInstance.buildScripts.size()}">
+                                    <g:each in="${serverInstance.buildScripts}" var="b">
+                                        <li><g:link controller="buildScript" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link> </li>
+                                    </g:each>
+                                </g:if>
                                 </ul>
                             </td>
                             
