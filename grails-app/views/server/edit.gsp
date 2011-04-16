@@ -90,7 +90,7 @@
                                   <label for="serverType"><g:message code="server.serverType.label" default="Server Type" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'serverType', 'errors')}">
-                                    <g:select name="serverType" from="${info.network.ServerType.list()}" multiple="yes" optionKey="id" size="5" value="${serverInstance?.serverTypes*.id}" />
+                                    <g:select name="serverTypes" from="${info.network.ServerType.list()}" multiple="yes" optionKey="id" size="5" value="${serverInstance?.serverTypes*.id}" />
                                 </td>
                             </tr>
                         
