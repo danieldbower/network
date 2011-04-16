@@ -24,6 +24,6 @@ class BuildScript implements Comparable{
 	}
 	
 	String toString(){
-		scriptVersion.toString()
+		"$server V$scriptVersion"
 	}
 }
