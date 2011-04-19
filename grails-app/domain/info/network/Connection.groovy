@@ -9,7 +9,7 @@ class Connection {
 	String address
 	Boolean administrativeConnection = false
 	
-	static belongsTo = Server
+	static belongsTo = [server:Server]
 	static hasOne = [server:Server]
 	
     static constraints = {
@@ -19,4 +19,8 @@ class Connection {
 	String toString(){
 		address
 	}
+	
+	/*
+	 * Check whether we have an ipv4 address, do ping/traceroute
+	 */
 }
