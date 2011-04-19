@@ -48,7 +48,7 @@
                         
                             <td>${fieldValue(bean: serverInstance, field: "assetTag")}</td>
                         
-                            <td><g:formatBoolean boolean="${serverInstance.physicalOrVirtual}" /></td>
+                            <td><g:formatBoolean boolean="${serverInstance?.physicalOrVirtual}"  true="Physical" false="Virtual" /></td>
                         
                             <td>${fieldValue(bean: serverInstance, field: "platform")}</td>
                         
