@@ -78,15 +78,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="connections"><g:message code="server.connections.label" default="Connections" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'connections', 'errors')}">
-                                    <g:select name="connections" from="${info.network.Connection.list()}" multiple="yes" optionKey="id" size="5" value="${serverInstance?.connections*.id}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                   <label for="serverType"><g:message code="server.serverType.label" default="Server Type" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: serverInstance, field: 'serverType', 'errors')}">
@@ -115,9 +106,7 @@
                         </tbody>
                     </table>
                 </div>
-                <g:each in="${serverInstance?.buildScripts}" var="buildScript"  status="i">
-                    <g:hiddenField name="buildScripts[${i}].id" value="${buildScript?.id}" />
-                </g:each>
+                
                 <div class="buttons">
                     <span class="button"><g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" /></span>
                     <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
